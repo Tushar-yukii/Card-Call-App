@@ -167,3 +167,35 @@ function showCards() {
   });
 }
 showCards();
+
+function updateStack() {
+  const cards = document.querySelectorAll(".stack .card");
+  cards.forEach((card, i) => {
+    // Only apply effects to visible cards (first 3)
+    if (i < 3) {
+      card.style.zIndex = 3 - i;
+      card.style.transform = `translateY(${i * 10}px) scale(${1 - i * 0.02})`;
+      card.style.opacity = `${1 - i * 0.02}`;
+      card.style.display = "block";
+    } else {
+      // Hide cards beyond the first 3
+      card.style.display = "none";
+    }
+  });
+}
+
+upBtn.addEventListener("click", function () {
+  let lastChild = stack.lastElementChild;
+  if (lastChild) {
+    stack.insertBefore(lastChild, stack.firstElementChild);
+    updateStack();
+  }
+});
+
+downBtn.addEventListener("click", function () {
+  let firstChild = stack.firstElementChild;
+  if (firstChild) {
+    stack.appendChild(firstChild);
+    updateStack();
+  }
+});
