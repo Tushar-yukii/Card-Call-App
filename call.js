@@ -98,21 +98,21 @@ function showCards() {
 
   let allTasks = JSON.parse(localStorage.getItem("tasks"));
 
-  allTasks.forEach(function (task) {
+  allTasks.forEach(function (tasks) {
     // Create card container
     const card = document.createElement("div");
     card.classList.add("card");
 
     // Avatar image
     const avatar = document.createElement("img");
-    avatar.src = task.imageUrl;
+    avatar.src = tasks.imageUrl;
     avatar.alt = "profile";
     avatar.classList.add("avatar");
     card.appendChild(avatar);
 
     // Name
     const name = document.createElement("h2");
-    name.textContent = task.fullName;
+    name.textContent = tasks.fullName;
     card.appendChild(name);
 
     // Info: Home town
@@ -122,7 +122,7 @@ function showCards() {
     const hometownLabel = document.createElement("span");
     hometownLabel.textContent = "Home town";
     const hometownValue = document.createElement("span");
-    hometownValue.textContent = task.homeTown;
+    hometownValue.textContent = tasks.homeTown;
 
     hometownInfo.appendChild(hometownLabel);
     hometownInfo.appendChild(hometownValue);
@@ -135,7 +135,7 @@ function showCards() {
     const bookingsLabel = document.createElement("span");
     bookingsLabel.textContent = "Purpose";
     const bookingsValue = document.createElement("span");
-    bookingsValue.textContent = task.purpose;
+    bookingsValue.textContent = tasks.purpose;
 
     bookingsInfo.appendChild(bookingsLabel);
     bookingsInfo.appendChild(bookingsValue);
