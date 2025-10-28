@@ -128,7 +128,7 @@ function showCards() {
     hometownInfo.appendChild(hometownValue);
     card.appendChild(hometownInfo);
 
-    // Info: Bookings
+    // Info: Bookings info
     const bookingsInfo = document.createElement("div");
     bookingsInfo.classList.add("info");
 
@@ -141,7 +141,7 @@ function showCards() {
     bookingsInfo.appendChild(bookingsValue);
     card.appendChild(bookingsInfo);
 
-    // Buttons container
+    // Buttons container 
     const buttonsDiv = document.createElement("div");
     buttonsDiv.classList.add("buttons");
 
@@ -162,7 +162,7 @@ function showCards() {
     // Append buttonsDiv to card
     card.appendChild(buttonsDiv);
 
-    // Finally, add the card to the DOM (for example, inside a container)
+    // Finally, add the card to the DOM 
     document.querySelector(".stack").appendChild(card); // or any container of your choice
   });
 }
@@ -171,7 +171,7 @@ showCards();
 function updateStack() {
   const cards = document.querySelectorAll(".stack .card");
   cards.forEach((card, i) => {
-    // Only apply effects to visible cards (first 3)
+    // Only apply effects to visible cards first 3
     if (i < 3) {
       card.style.zIndex = 3 - i;
       card.style.transform = `translateY(${i * 10}px) scale(${1 - i * 0.02})`;
