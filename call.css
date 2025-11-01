@@ -99,7 +99,6 @@ body {
   opacity: 0.7;
 }
 
-/* Card content */
 .avatar {
   width: 40px;
   height: 40px;
@@ -205,7 +204,7 @@ input[type="text"] {
 
 .closeForm {
   width: 100%;
-  padding: 12px 22px;
+  padding: 13px 21px;
   margin-top: 10px;
   background-color: #ff4a4a;
   border: none;
